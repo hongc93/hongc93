@@ -1,0 +1,351 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "microsoft yahei", arial;
+
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.main {
+    width: 640px;
+    height: 1008px;
+    position: absolute;
+    left: 50%;
+    margin-left: -320px;
+    transform-origin:top;
+    overflow: hidden;
+}
+.fir {
+    position: absolute;
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    background: url("images/bg00.png") no-repeat;
+    background-size: cover;
+}
+
+.girl {
+    position: absolute;
+    background: url("images/6.png") no-repeat;
+    width: 640px;
+    height: 246px;
+    background-size: 100% 100%;
+    top: 50px;
+    -webkit-animation: fadeInDown 1s ease 0s 1;
+    -o-animation: fadeInDown 1s ease 0s 1 both;
+    animation: fadeInDown 1s ease 0s 1 both;
+
+}
+
+.firIntro {
+    position: absolute;
+    top: 300px;
+    background: url("images/2.png") no-repeat;
+    width: 640px;
+    height: 350px;
+    -webkit-animation: fadeIn 2s ease 1s 1 both;
+    -o-animation: fadeIn 2s ease 1s 1 both;
+    animation: fadeIn 2s ease 1s 1 both;
+}
+
+.firUp {
+    position: absolute;
+    bottom: 180px;
+    background: url("images/1.png") no-repeat;
+    background-size: cover;
+    width: 640px;
+    height: 216px;
+    -webkit-animation: bounceInUp 1s ease 0s 1 both;
+    -o-animation: bounceInUp 1s ease 0s 1 both;
+    animation: bounceInUp 1s ease 0s 1 both;
+}
+
+.arrow {
+    position: absolute;
+    bottom: 5%;
+    width: 60px;
+    left: 50%;
+    margin-left: -25px;
+    height: 30px;
+    -webkit-animation: arrowMove 2s ease-in-out infinite;
+    -moz-animation: arrowMove 2s ease-in-out infinite;
+    animation: arrowMove 2s ease-in-out infinite;
+
+}
+
+.arrow .arrowLeft, .arrow .arrowRight {
+    width: 30px;
+    float: left;
+    height: 8px;
+    background-color: #ffffff;
+    box-shadow: 1px -1px 1px #646464;
+
+}
+
+.arrow .arrowLeft {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    border-radius: 4px 0 0 4px;
+}
+
+.arrow .arrowRight {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-left: -10px;
+    border-radius: 0 4px 4px 0;
+}
+
+@keyframes arrowMove {
+    0%, 30% {
+        opacity: 0;
+        -webkit-transform: translate(0, 10px)
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: translate(0, 0)
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate(0, -8px)
+    }
+}
+
+@-webkit-keyframes arrowMove {
+    0%, 30% {
+        opacity: 0;
+        -webkit-transform: translate(0, 10px)
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: translate(0, 0)
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate(0, -8px)
+    }
+}
+
+
+.second{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("images/bg01.png") no-repeat;
+}
+.photo{
+    background: url("images/5.png") no-repeat;
+    width: 640px;
+    height: 283px;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    -webkit-animation: bounceInUp 1s ease-in ;
+    -moz-animation: bounceInUp 1s ease-in;
+    animation: bounceInUp 1s ease-in ;
+
+}
+.personInfo  {
+    color: #fff;
+    line-height: 66px;
+    font-size: 28px;
+    position: absolute;
+    top: 5%;
+    left: 20%;
+}
+.personInfo p{
+
+    transition: 1s;
+}
+.personInfo p:nth-child(odd){
+    -webkit-animation: bounceInLeft 2s ease-in ;
+    -moz-animation: bounceInLeft 2s ease-in;
+    animation: bounceInLeft 2s ease-in ;
+}
+.personInfo p:nth-child(even){
+    -webkit-animation: fadeInRight 1s ease-in ;
+    -moz-animation: fadeInRight 1s ease-in;
+    animation: fadeInRight 1s ease-in;
+}
+.zIndex{
+    z-index: 10;
+}
+
+#list  {
+    width: 100%;
+    height: 100%;
+}
+#list li{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left:0;
+    top:0;
+    background-size: cover;
+}
+#list li:nth-child(1){
+    background: url(images/bg00.png) no-repeat;
+    background-size: cover;
+}
+#list li:nth-child(2){
+    background: url(images/bg01.png) no-repeat;
+    background-size: cover;
+}
+#list li:nth-child(3){
+    background: url(images/bg02.png) no-repeat;
+    background-size: cover;
+}
+#list li:nth-child(4){
+    background: url(images/bg04.png) no-repeat;
+    background-size: cover;
+}
+
+
+
+.skills{
+}
+.skills p{
+
+    border: 2px solid #c70000;
+    text-align: center;
+    color: #fff;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 10px;
+    font-size: 26px;
+    box-shadow: 3px 3px 3px #d9d9d9;
+    -webkit-animation: rotateIn 1s ease-in;
+    animation: rotateIn 1s ease-in;
+
+}
+.zIndex .skills p:nth-child(1){
+    position: absolute;
+    top: 50%;
+    left: 44%;
+}
+.skills p:nth-child(2){
+    position: absolute;
+    top: 23%;
+    left: 30%;
+}
+.skills p:nth-child(3){
+    position: absolute;
+    top: 30%;
+    left: 50%;
+}
+.skills p:nth-child(4){
+    position: absolute;
+    top: 38%;
+    left: 18%;
+}
+.skills p:nth-child(5){
+    position: absolute;
+    top: 40%;
+    left: 60%;
+}
+.skills p:nth-child(6){
+    position: absolute;
+    top: 17%;
+    left: 60%;
+}
+.skills p:nth-child(7){
+    position: absolute;
+    top: 5%;
+    left: 40%;
+}
+.skills p:nth-child(8){
+    position: absolute;
+    top: 14%;
+    left: 11%;
+}
+.photo02{
+    width: 640px;
+    height: 526px;
+    position: absolute;
+    bottom: 0;
+    background: url("images/7.png") no-repeat;
+    -webkit-animation: rubberBand 1s ease-in;
+    animation: rubberBand 1s ease-in;
+}
+.thank{
+    position: absolute;
+    top: 15%;
+    width: 640px;
+    background: url("images/22.png") no-repeat center top;
+    padding-top: 320px;
+    text-align: center;
+
+    -webkit-animation: fadeInDown 1s ease-in-out 0s 1 both;
+    -o-animation: fadeInDown 1s ease-in-out 0s 1 both;
+    animation: fadeInDown 1s ease-in-out 0s 1 both;
+}
+.thank p{
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 60px;
+}
+.photo03{
+    position: absolute;
+    bottom: 0;
+    width: 640px;
+    height: 270px;
+    background: url("images/4.png") no-repeat;
+
+    -webkit-animation: fadeIn 1s ease-in 0s 1 both;
+    -o-animation: fadeIn 1s ease-in 0s 1 both;
+    animation: fadeIn 1s ease-in 0s 1 both;
+}
+#audio_btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 999;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+
+}
+.rotate{
+    -webkit-animation: rotateHong 2s linear infinite;
+    -moz-animation: rotateHong 2s linear infinite;
+    -o-animation: rotateHong 2s linear infinite;
+    animation: rotateHong 2s linear infinite;
+    background-image: url("images/3.svg");
+}
+.off {
+    background-image: url("images/3.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+@-webkit-keyframes rotateHong {
+    0% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: rotate3d(0, 0, 1, -720deg);
+        transform: rotate3d(0, 0, 1, -720deg);
+    }
+
+    100% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
