@@ -3,18 +3,30 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>陈宏简历</title>
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="form-detection" content="telephone=no,email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
     <link rel="stylesheet" href="animate.css"/>
     <link rel="stylesheet" href="index.css"/>
 </head>
 <body>
 <div class="main" id="main">
-    <div id="audio_btn" class="off rotate">
-        <audio src="3.mp3" id="bell" loop preload="auto" autoplay="autoplay"></audio>
+    <div id="audio_btn">
+        <div class="music" id="musicBtn"></div>
+        <audio id="audio1" src="3.mp3" preload="none" loop/>
+    </div>
+
+
+    <div class="loading" id="loading" style="z-index: 30">
+        <div class="loadBox">
+            <span class="progress" id="progress"></span>
+        </div>
     </div>
     <ul id="list">
-        <li class="zIndex">
+        <!--<li class="zIndex">
+
+        </li>-->
+        <li>
             <div class="girl"></div>
             <div class="firIntro"></div>
             <div class="firUp"></div>
@@ -29,7 +41,7 @@
 
                 <p>学历：本科</p>
 
-                <p>电话：18611579296</p>
+                <p>电话：<a href="tel:18611579296">18611579296</a></p>
 
                 <p>邮箱：hongc93@163.com</p>
 
@@ -83,7 +95,6 @@
         </li>
     </ul>
 </div>
-<!--<script type="text/javascript" src="utils.min.js"></script>-->
 <script type="text/javascript" src="index.js"></script>
 </body>
 </html>

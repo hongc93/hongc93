@@ -9,7 +9,12 @@ function getEle(ele) {
 
 var main = getEle("#main");
 var audioPlay=getEle("#bell");
-
+var oLis=getEle("li");
+var progress = getEle("#progress");
+var loading = getEle("#loading");
+var musicBtn = getEle("#musicBtn");
+var musicAudio = getEle("#audio1");
+var num=0;
 
 var winW = document.documentElement.clientWidth;
 var winH = document.documentElement.clientHeight;
@@ -21,20 +26,40 @@ if (winW / winH <= desW / desH) {
     main.style.webkitTransform = "scale(" + winW / desW + ")";
 }
 
+function fnLoad() {
+    var arr = ['bg00.png', 'bg01.png', 'bg02.png', 'bg04.png'];
+    for (var i = 0; i < arr.length; i++) {
+        var oImg = new Image();
+        oImg.src = "images/" + arr[i];
+        oImg.onload = function () {
+            num++;
+            //加载成功的图片的个数占所有图片的百分比就是progress的宽度
+            progress.style.width = num / arr.length * 100 + "%";
+            //动画执行完的时候都会触发webkitTransitionEnd这个事件
+            if (num == arr.length && loading) {
+                progress.addEventListener("webkitTransitionEnd", function () {
+                    loading.style.display="none";
+                    oLis[0].className="zIndex";
+console.log("111");
+                    /*第二步实现上下滑动效果*/
+                    [].forEach.call(oLis, function () {
+                        console.log("222");
+                        var oLi = arguments[0];
+                        oLi.index = arguments[1];
+                        oLi.addEventListener("touchstart", start, false);
+                        oLi.addEventListener("touchmove", move, false);
+                        oLi.addEventListener("touchend", end, false);
 
-//var oLis=getEle("#list").querySelectorAll("li");
-var oLis=getEle("li");
+                    });
+                }, false)
+            }
+        }
+    }
+}
+fnLoad();
 
 
-/*第二步实现上下滑动效果*/
-[].forEach.call(oLis, function () {
-    var oLi = arguments[0];
-    oLi.index = arguments[1];
-    oLi.addEventListener("touchstart", start, false);
-    oLi.addEventListener("touchmove", move, false);
-    oLi.addEventListener("touchend", end, false);
 
-});
 function start(e) {
     this.startTouch = e.changedTouches[0].pageY; //鼠标点击时所在位置的纵坐标
     audioPlay.play();
@@ -83,9 +108,25 @@ document.addEventListener("touchmove",function(){
 
 
 
-audioPlay.addEventListener("click", function(){
-    bell.pause();
-    utils.removeClass(this,"rotate");
+
+//->当页面加载完成后,我们开始播放我们的音频文件
+window.addEventListener("load", function () {
+    musicAudio.play();
+
+    //->canplay:监听当前的音频文件是否可以播放了
+    musicAudio.addEventListener("canplay", function () {
+        musicBtn.style.display = "block";
+        musicBtn.className = "music move";
+    }, false);
+
+    //->给按钮绑定点击事件,单击的时候判断当前是否处于播放状态,播放状态让其暂停,暂停状态让其播放
+    musicBtn.addEventListener("touchend", function () {
+        if (musicAudio.paused) {//->是否为暂停状态,此时是暂停状态
+            musicAudio.play();
+            musicBtn.className = "music move";
+        } else {
+            musicAudio.pause();
+            musicBtn.className = "music";
+        }
+    }, false);
 }, false);
-
-
